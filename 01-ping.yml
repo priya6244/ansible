@@ -7,4 +7,4 @@
   hosts: web
   tasks:
   - name: ping the server
-    ansible.bultin.ping:
+    ansible.builtin.ping:
