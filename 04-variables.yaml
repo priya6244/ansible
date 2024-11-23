@@ -1,5 +1,5 @@
 - name: variables
-  hosts: web
+  hosts: 
   vars: #play level -> all tasks in this play have access to this
     COURSE: "DevOps with AWS"
     DURATION: "120 hrs"
