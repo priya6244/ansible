@@ -1,0 +1,8 @@
+- name: variables from files
+  hosts: local
+  var_files:
+    06-vars-declrtn.yaml
+  tasks:
+  - name: Print the information
+    ansible.builtin.debug:
+      msg: "Learning {{course}}, duration {{duration}}, trainer {{trainer}}"
