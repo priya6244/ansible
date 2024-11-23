@@ -1,0 +1,15 @@
+- name: variables from files
+  hosts: web
+  var_prompt:
+  - name: COURSE
+    prompt: enter the course name
+    private: false #not confidential
+  - name: DURATION
+    prompt: enter the duration
+  - name: trainer
+    prompt: enter the trainer name
+  tasks: 
+  - name: Print the information
+    ansible.builtin.debug:
+      msg: "Iam learning {{COURSE}}, Duration is : {{DURATION}}, trainer is : {trainer{}}"
+ 
