@@ -1,6 +1,6 @@
 - name: variables from files
   hosts: web
-  var_prompt:
+  vars_prompt:
   - name: COURSE
     prompt: enter the course name
     private: false #not confidential
