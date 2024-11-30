@@ -4,7 +4,7 @@
   tasks:
   - name: check user exist or not
     ansible.builtin.command: id expense
-    Register: USER #USER is a variable that gets output from above command
+    register: USER #USER is a variable that gets output from above command
   
   - name: Print user information
     ansible.builtin.debug:
