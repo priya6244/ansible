@@ -12,7 +12,7 @@
   - name: Print the information
     ansible.builtin.debug:
       msg: "Expense user already exists"
-    when: rc = 0
+    when: USER.rc = 0
 
   - name: Create the user
     ansible.builtin.command: useradd expense
