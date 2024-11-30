@@ -9,7 +9,7 @@
     my_number: 30 #number
   tasks:
   - name: Print the information
-    ansible:builtin.debug:
+    ansible.builtin.debug:
       msg: "Given number {{my_number}} is less than 10"
     when: my_number | int < 10
 
