@@ -1,6 +1,6 @@
 - name: check a number is less than 10 or not
   hosts: local
-  connection: local #no need to mention username and password while running the commands in server
+  connection: local #no need to mention username and password while running the commands in ansible server
   vars_prompt:
   - name: my_number
     prompt: "Enter the number"
