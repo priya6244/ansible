@@ -6,7 +6,7 @@
     ansible.builtin.command: id expense
     Register: USER #USER is a variable that gets output from above command
   
-  - name : Print user information
+  - name: Print user information
     ansible.builtin.debug:
       msg: "user info: {{ USER }}"
   # - name: Print the information
