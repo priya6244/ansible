@@ -2,9 +2,9 @@
   hosts: local
   connection: local #no need to mention username and password while running the commands in ansible server
   vars_prompt:
-  - name: my_number
-    prompt: "Enter the number"
-    private: false #not confidential
+  # - name: my_number
+  #   prompt: "Enter the number"
+  #   private: false #not confidential
   vars:
     my_number: 30 #number
   tasks:
