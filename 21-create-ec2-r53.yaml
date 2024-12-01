@@ -6,7 +6,7 @@
     sg_id: sg-0a1404c2947084704
     ami_id: ami-09c813fb71547fc4f
     instances:
-    - { name: 'mysql', state: 'absent'}
+    - mysql
     - backend
     - frontend
     zone: haridev.online
@@ -24,5 +24,11 @@
       instance_type: "t3.micro"
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
+      state: 'absent'
     loop: "{{ instances }}"
     register: ec2_instances
+
+  # - name: Terminate instances that were previously launched
+  #   ec2:
+  #     state: 'absent'
+  #     loop: "{{ instances }}"
