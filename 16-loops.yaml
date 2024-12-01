@@ -9,6 +9,6 @@
       state: present
     loop:
     - mysql
-    - Nginx
+    - nginx
     - postfix
     - nodejs
