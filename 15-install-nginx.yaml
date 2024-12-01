@@ -1,14 +1,20 @@
 - name: Nginx installation
-  hosts: web
+  hosts: local
   become: yes
+  connection: local
   tasks:
-  - name: Install Nginx
-    ansible.builtin.package:
-      name: Nginx
+  - name: Print the stats
+    ansible.builtin.debug:
+      msg: {{ ansible_facts }}
+
+  - name: install nginx if redhat
+    ansible.builtin.dnf:
+      name: nginx
       state: present
-  
-  - name: Start and run Nginx
-    ansible.builtin.service:
-      name: Nginx
-      state: start
-      enabled: yes
+    when: ansible_os_family == "Redhat"
+
+  - name: install nginx if Debiam
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Debian"
