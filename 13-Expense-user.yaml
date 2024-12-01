@@ -6,9 +6,11 @@
     ansible.builtin.command: id expense
     register: USER #USER is a variable that gets output from above command
     ignore_errors: true
+
   - name: Print user information
     ansible.builtin.debug:
       msg: "user info: {{ USER }}"
+
   - name: Print the information
     ansible.builtin.debug:
       msg: "Expense user already exists"

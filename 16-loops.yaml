@@ -1,0 +1,14 @@
+- name: Loops in ansible
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: Installing different packages using loops
+    ansible.builtin.package:
+      name: {{ item }}
+      state: present
+    loop:
+    - mysql
+    - Nginx
+    - postfix
+    - nodejs
