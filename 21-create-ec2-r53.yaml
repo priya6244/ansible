@@ -6,11 +6,11 @@
     sg_id: sg-0a1404c2947084704
     ami_id: ami-09c813fb71547fc4f
     instances:
-    - mysql
+    - { name: 'mysql', state: 'absent'}
     - backend
     - frontend
     zone: haridev.online
-  tasks:
+  tasks: #9C785qVnasc18kZDNoqVpKzaxpV2atNO0MS1ZjHt
   - name: ansible to install boto3 and botocore
     ansible.builtin.pip:
       name:
