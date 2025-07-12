@@ -11,12 +11,12 @@
     - frontend
     zone: haridev.online
   tasks: #9C785qVnasc18kZDNoqVpKzaxpV2atNO0MS1ZjHt
-  # - name: ansible to install boto3 and botocore
-  #   ansible.builtin.pip:
-  #     name:
-  #     - boto3
-  #     - botocore
-  #     executable: pip3.9
+  - name: ansible to install boto3 and botocore
+    ansible.builtin.pip:
+      name:
+      - boto3
+      - botocore
+      executable: pip3.9
   - name: create ec2 instance
     amazon.aws.ec2_instance:
       name: "{{ item }}"
