@@ -5,8 +5,8 @@
   - name: my_number
     prompt: "Enter the number"
     private: false #not confidential
-  vars:
-    my_number: 30 #number
+  # vars:
+  #   my_number: 30 #number
   tasks:
   - name: Print the information
     ansible.builtin.debug:
