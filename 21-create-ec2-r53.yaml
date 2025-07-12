@@ -10,7 +10,7 @@
     - backend
     - frontend
     zone: haridev.online
-  tasks: #9C785qVnasc18kZDNoqVpKzaxpV2atNO0MS1ZjHt
+  tasks: 
   - name: ansible to install boto3 and botocore
     ansible.builtin.pip:
       name:
@@ -27,6 +27,7 @@
       state: "present"
     loop: "{{ instances }}"
     register: ec2_instances
+
 
   #     #private IP R53
   # - name: create r53 private records
