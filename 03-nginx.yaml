@@ -1,6 +1,7 @@
 - name: nginx install and run
   hosts: web
-  become: yes
+#  connection: local #keep this, when you want to install nginx in ansible server
+  become: yes #giving sudo access to install nginx package
   tasks:
   - name: install nginx
     ansible.builtin.package:
@@ -11,31 +12,3 @@
       name: nginx
       state: started
       enabled: yes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# - name: nginx installation and run
-#   hosts: local
-#   connection: local
-#   become: yes #giving sudo access to install nginx package
-#   tasks: 
-#     - name: nginx installation
-#       ansible.builtin.package: #heterogeneous module that can work for all distributions
-#         name: nginx
-#         state: present
-#     - name: nginx run
-#       ansible.builtin.service:
-#         name: nginx
-#         state: started
-#         enabled: yes
