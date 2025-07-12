@@ -1,5 +1,5 @@
 - name: Create expense user
-  hosts: web
+  hosts: local
   become: yes #giving root access
   tasks:
   - name: check user exist or not
