@@ -27,8 +27,7 @@
       state: "present"
     loop: "{{ instances }}"
     register: ec2_instances
-
-
+    
   #     #private IP R53
   # - name: create r53 private records
   #   amazon.aws.route53:
