@@ -1,6 +1,6 @@
 - name: Create expense user
   hosts: local
-  connection: localhost
+  connection: local
   become: yes #giving root access
   tasks:
   - name: check user exist or not
