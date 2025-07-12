@@ -1,14 +1,40 @@
-- name: nginx installation and run
-  hosts: local
-  connection: local
-  become: yes #giving sudo access to install nginx package
-  tasks: 
-    - name: nginx installation
-      ansible.builtin.package: #heterogeneous module that can work for all distributions
-        name: nginx
-        state: present
-    - name: nginx run
-      ansible.builtin.service:
-        name: nginx
-        state: started
-        enabled: yes
+- name: nginx install and run
+  hosts: web
+  tasks:
+  - name: install nginx
+    ansible.builtin.package:
+      name: nginx
+      state: present
+  - name: run nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# - name: nginx installation and run
+#   hosts: local
+#   connection: local
+#   become: yes #giving sudo access to install nginx package
+#   tasks: 
+#     - name: nginx installation
+#       ansible.builtin.package: #heterogeneous module that can work for all distributions
+#         name: nginx
+#         state: present
+#     - name: nginx run
+#       ansible.builtin.service:
+#         name: nginx
+#         state: started
+#         enabled: yes
