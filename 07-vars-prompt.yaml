@@ -6,6 +6,7 @@
     private: false #not confidential
   - name: DURATION
     prompt: enter the duration
+    private: true
   - name: trainer
     prompt: enter the trainer name
   tasks: 
